@@ -140,7 +140,7 @@ class Correctness {
                 Expression tmp = substitution(exists, var, mapForAxioms.get(var.value));
                 if (another.equals(((Exists) tmp).helpExpression)) {
                     Expression exp = mapForAxioms.get(var.value);
-                    if (exp.equals(exists.mainExpression) ||
+                    if (exp !=null && exp.equals(exists.mainExpression) ||
                             checkQuant(exists.helpExpression, var,false, false, exp)) {
                         return 0;
                     } else {
@@ -169,7 +169,7 @@ class Correctness {
                     Expression tmpExpr = e.getCopy();
                     Expression subs = substitution(((Implication) tmpExpr).secondExpression,
                             v, mapOfExp.get(v.value));
-                    if (subs.equals(((And) ((Implication) tmpExpr).firstExpression).firstExpression)) {
+                    if (subs != null && subs.equals(((And) ((Implication) tmpExpr).firstExpression).firstExpression)) {
                         mapOfExp.clear();
                         Expression tmp = ((Any) ((And) ((Implication) tmpExpr).firstExpression).
                                 secondExpression).helpExpression;

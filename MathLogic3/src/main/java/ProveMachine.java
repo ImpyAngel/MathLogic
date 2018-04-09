@@ -56,11 +56,11 @@ public class ProveMachine {
             } else {
                 StringBuilder Ab = new StringBuilder("0");
                 StringBuilder Bb = new StringBuilder("0");
-                for (int i = 0; i < b; i++) {
-                    if (i < a) {
-                        Ab.append("'");
+                for (int i = 0; i < a; i++) {
+                    if (i < b) {
+                        Bb.append("'");
                     }
-                    Bb.append("'");
+                    Ab.append("'");
                 }
                 String A = Ab.toString();
                 StringBuilder B = new StringBuilder(Bb.toString());

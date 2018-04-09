@@ -13,8 +13,8 @@ public class Main {
             System.err.println("use <input file> <output file> <number of hw 1 or 2>");
             return;
         } else {
-            output = args[0];
-            input = args[1];
+            input = args[0];
+            output = args[1];
             isHW1 = Integer.parseInt(args[2]) == 1;
         }
         ProveMachine proveMachine = new ProveMachine(input, output, new Correctness());
