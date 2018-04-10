@@ -187,6 +187,9 @@ public class ProveMachine {
                 writer.write(writeHeader(headerList));
                 for (int i = 0; i < approvals.size(); i++) {
 //                    writer.println(i + 1);
+                    if (i + 1 == 7499) {
+                        i+=0;
+                    }
                     Expression expr = approvals.get(i);
                     if (alpha.equals(expr)) {
                         writer.write(writeAlpha());

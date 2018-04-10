@@ -137,6 +137,16 @@ public interface ParserListener extends ParseTreeListener {
 	 */
 	void exitPred(ParserParser.PredContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ParserParser#predname}.
+	 * @param ctx the parse tree
+	 */
+	void enterPredname(ParserParser.PrednameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserParser#predname}.
+	 * @param ctx the parse tree
+	 */
+	void exitPredname(ParserParser.PrednameContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ParserParser#term}.
 	 * @param ctx the parse tree
 	 */
@@ -166,4 +176,14 @@ public interface ParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMul(ParserParser.MulContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ParserParser#funcname}.
+	 * @param ctx the parse tree
+	 */
+	void enterFuncname(ParserParser.FuncnameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ParserParser#funcname}.
+	 * @param ctx the parse tree
+	 */
+	void exitFuncname(ParserParser.FuncnameContext ctx);
 }

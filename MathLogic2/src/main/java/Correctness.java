@@ -48,7 +48,8 @@ class Correctness {
             if (firstExp instanceof AbstractUnaryOperator) {
                 return checkEqualStructure(((AbstractUnaryOperator) firstExp).mainExpression,
                         ((AbstractUnaryOperator) secondExp).mainExpression, mapOfExpr)
-                        && (((AbstractUnaryOperator) firstExp).helpExpression == null || checkEqualStructure(((AbstractUnaryOperator) firstExp).helpExpression,
+                        && (((AbstractUnaryOperator) firstExp).helpExpression == null
+                        || checkEqualStructure(((AbstractUnaryOperator) firstExp).helpExpression,
                         ((AbstractUnaryOperator) secondExp).helpExpression, mapOfExpr));
             }
 

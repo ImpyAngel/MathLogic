@@ -43,26 +43,30 @@ public class ParserFA {
             if (ctx instanceof ParserParser.NotContext) return new Not(handleExpr(ctx.getChild(1)));
             if (ctx instanceof ParserParser.VarContext) {
                 ParserParser.VarContext var = (ParserParser.VarContext) ctx;
-                return new Variable(var.LOWERCASE() + digitsToString(var.DIGITS()));
+                return new Variable( digitsToString(var.children));
+            }
+            if (ctx instanceof ParserParser.AcsiomvarContext) {
+                ParserParser.AcsiomvarContext var = (ParserParser.AcsiomvarContext) ctx;
+                return new Variable( digitsToString(var.children));
             }
             if (ctx instanceof ParserParser.PredContext) {
                 ParserParser.PredContext pred = (ParserParser.PredContext) ctx;
-                if (pred.UPPERCASE() != null) {
-                    String name = pred.UPPERCASE() + digitsToString(pred.DIGITS());
+                if (pred.predname() != null) {
+                    String name = digitsToString(pred.predname().children);
                     ArrayList<Expression> preds = new ArrayList<>();
                     for (ParseTree tree: pred.term()) {
                         preds.add(handleExpr(tree));
                     }
                     return new Predicate(name, preds);
                 } else {
-                    if (pred.acsiomvar() != null) return new Variable(pred.acsiomvar().UPPERCASE() + digitsToString(pred.acsiomvar().DIGITS()));
+                    if (pred.acsiomvar() != null) return new Variable(pred.acsiomvar().UPPERCASE().toString());
                     return new Equatation(handleExpr(ctx.getChild(0)), handleExpr(ctx.getChild(2)));
                 }
             }
             if (ctx instanceof ParserParser.MulContext) {
                 ParserParser.MulContext function = (ParserParser.MulContext) ctx;
-                if (function.LOWERCASE() != null) {
-                    String name = function.LOWERCASE() + digitsToString(function.DIGITS());
+                if (function.funcname() != null) {
+                    String name = digitsToString(function.funcname().children);
                     ArrayList<Expression> preds = new ArrayList<>();
                     for (ParseTree tree: function.term()) {
                         preds.add(handleExpr(tree));

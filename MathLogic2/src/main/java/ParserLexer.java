@@ -35,7 +35,7 @@ public class ParserLexer extends Lexer {
 
 	private static final String[] _LITERAL_NAMES = {
 		null, "'\n'", "','", "'|-'", "'->'", "'|'", "'&'", "'('", "')'", "'!'", 
-		"'?'", "'@'", "'='", "'+'", "'*'", "'0'", "'''"
+		"'?'", "'@'", "'0'", "'='", "'+'", "'*'", "'''"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
@@ -118,10 +118,10 @@ public class ParserLexer extends Lexer {
 		"\60\61\7/\2\2\61\b\3\2\2\2\62\63\7/\2\2\63\64\7@\2\2\64\n\3\2\2\2\65\66"+
 		"\7~\2\2\66\f\3\2\2\2\678\7(\2\28\16\3\2\2\29:\7*\2\2:\20\3\2\2\2;<\7+"+
 		"\2\2<\22\3\2\2\2=>\7#\2\2>\24\3\2\2\2?@\7A\2\2@\26\3\2\2\2AB\7B\2\2B\30"+
-		"\3\2\2\2CD\7?\2\2D\32\3\2\2\2EF\7-\2\2F\34\3\2\2\2GH\7,\2\2H\36\3\2\2"+
-		"\2IJ\7\62\2\2J \3\2\2\2KL\7)\2\2L\"\3\2\2\2MO\t\2\2\2NM\3\2\2\2OP\3\2"+
+		"\3\2\2\2CD\7\62\2\2D\32\3\2\2\2EF\7?\2\2F\34\3\2\2\2GH\7-\2\2H\36\3\2"+
+		"\2\2IJ\7,\2\2J \3\2\2\2KL\7)\2\2L\"\3\2\2\2MO\t\2\2\2NM\3\2\2\2OP\3\2"+
 		"\2\2PN\3\2\2\2PQ\3\2\2\2QR\3\2\2\2RS\b\22\2\2S$\3\2\2\2TU\4c|\2U&\3\2"+
-		"\2\2VW\4C\\\2W(\3\2\2\2XY\4\62;\2Y*\3\2\2\2\4\2P\3\b\2\2";
+		"\2\2VW\4C\\\2W(\3\2\2\2XY\4\63;\2Y*\3\2\2\2\4\2P\3\b\2\2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
